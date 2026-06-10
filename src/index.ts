@@ -71,7 +71,7 @@ const LLMS_TXT = `# hn-trending-mcp
 - hn_item(id)
 - hn_user(handle)
 
-Endpoint: https://hn-trending-mcp.prakhar-cognizance.workers.dev/mcp
+Endpoint: https://hn-trending-mcp.atlasword.workers.dev/mcp
 `;
 function renderLanding(env: Env, url: URL): string {
   const productName = env.PRODUCT_NAME ?? "hn-trending-mcp";
@@ -85,6 +85,6 @@ function renderLanding(env: Env, url: URL): string {
 <style>body{font:16px/1.5 system-ui,sans-serif;max-width:720px;margin:4rem auto;padding:0 1rem}code{background:#f3f3f3;padding:.1em .35em;border-radius:3px}</style>${meta}
 </head>
 <body><h1>${productName}</h1><p>${tagline}</p>
-<p><code>POST https://hn-trending-mcp.prakhar-cognizance.workers.dev/mcp</code></p>
+<p><code>POST https://hn-trending-mcp.atlasword.workers.dev/mcp</code></p>
 </body></html>`;
 }

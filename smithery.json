@@ -5,11 +5,11 @@
   "description": "HN front-page, full-text search via Algolia, and recent Show HN launches as one MCP.",
   "version": "0.1.0",
   "license": "MIT",
-  "homepage": "https://hn-trending-mcp.prakhar-cognizance.workers.dev",
+  "homepage": "https://hn-trending-mcp.atlasword.workers.dev",
   "repository": "https://github.com/guptaprakhariitr/hn-trending-mcp",
   "categories": ["news", "developer-tools"],
   "tags": ["hacker-news", "hn", "show-hn", "trending", "indie-launches"],
-  "transport": { "type": "http", "url": "https://hn-trending-mcp.prakhar-cognizance.workers.dev/mcp" },
+  "transport": { "type": "http", "url": "https://hn-trending-mcp.atlasword.workers.dev/mcp" },
   "auth": { "type": "bearer", "freeTier": { "monthlyCalls": 200, "ratePerMinute": 20 } },
   "tools": ["hn_top", "hn_search", "hn_show_recent", "hn_item", "hn_user"],
   "pricing": { "currency": "USD", "tiers": [
