@@ -1,0 +1,65 @@
+# Smithery registry config — https://smithery.ai/docs/build/project-config/smithery-yaml
+# This is an HTTP-transport MCP server; Smithery hosts the listing and proxies
+# clients straight to our Cloudflare Workers endpoint.
+
+name: hn-trending-mcp
+displayName: Hacker News Trending
+description: |
+  HN front-page, full-text search via Algolia, and recent Show HN launches as one MCP.
+homepage: https://hn-trending-mcp.atlasword.workers.dev
+repository: https://github.com/guptaprakhariitr/hn-trending-mcp
+license: MIT
+version: "0.1.0"
+
+runtime: container
+
+startCommand:
+  type: http
+  url: https://hn-trending-mcp.atlasword.workers.dev/mcp
+  configSchema:
+    type: object
+    properties:
+      apiKey:
+        type: string
+        title: API key (optional)
+        description: |
+          Bearer token from https://hn-trending-mcp.atlasword.workers.dev/upgrade.
+          Leave blank for the anonymous free tier (~100 calls/month/IP).
+    required: []
+  exampleConfig:
+    apiKey: ""
+  commandFunction: |-
+    (config) => ({
+      type: "http",
+      url: "https://hn-trending-mcp.atlasword.workers.dev/mcp",
+      headers: config.apiKey ? { Authorization: `Bearer ${config.apiKey}` } : {}
+    })
+
+remote:
+  type: http
+  url: https://hn-trending-mcp.atlasword.workers.dev/mcp
+
+categories:
+  - news
+  - developer-tools
+tags:
+  - hacker-news
+  - hn
+  - show-hn
+  - trending
+  - indie-launches
+
+tools:
+  - name: hn_top
+  - name: hn_search
+  - name: hn_show_recent
+  - name: hn_item
+  - name: hn_user
+
+auth:
+  type: bearer
+  required: false
+  description: |
+    Optional. Anonymous free tier works for ~100 calls/month per IP. For higher
+    quotas, grab a key from https://hn-trending-mcp.atlasword.workers.dev/upgrade and pass
+    it as `Authorization: Bearer <key>`.
