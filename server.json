@@ -3,7 +3,7 @@
   "name": "io.github.guptaprakhariitr/hn-trending-mcp",
   "title": "Hacker News Trending",
   "description": "HN front-page, Algolia full-text search, and Show HN launch tracker.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://hn-trending-mcp.atlasword.workers.dev/",
   "repository": {
     "url": "https://github.com/guptaprakhariitr/hn-trending-mcp",
@@ -13,16 +13,6 @@
     {
       "type": "streamable-http",
       "url": "https://hn-trending-mcp.atlasword.workers.dev/mcp"
-    }
-  ],
-  "packages": [
-    {
-      "registryType": "npm",
-      "identifier": "@insnapsprakhar/hn-trending-mcp",
-      "version": "0.1.0",
-      "transport": {
-        "type": "stdio"
-      }
     }
   ]
 }
